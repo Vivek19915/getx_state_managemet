@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:getx_state_managemet/controller.dart';
+import 'package:getx_state_managemet/seond_screen.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class DEMO extends StatelessWidget {
@@ -39,6 +40,61 @@ class DEMO extends StatelessWidget {
               onPressed: (){getController2.incrementValue();},
               child: "Increment the value".text.semiBold.make()
           ),
+
+
+        100.heightBox,
+
+
+          //🔥🔥🔥🔥🔥🔥🔥🔥🔥
+          ElevatedButton(
+              onPressed: (){
+                // Get.toNamed("/secondpage");   --> using getpage vali method
+                Get.to(()=>SecondScreen(),
+                  curve: Curves.bounceInOut,    //also gives functions like animations
+                  transition: Transition.zoom ,    //animation while trabsition betwwen pages
+                  duration: Duration(seconds: 3),
+
+
+                );
+                },
+              child: "Go to next screen".text.semiBold.make()
+          ),
+
+
+          //also help in changes the theme of ui ---->>>>>>>
+          ElevatedButton(
+              onPressed: (){
+                Get.changeTheme(ThemeData.dark());
+                },
+              child: "Change theme".text.semiBold.make()
+          ),
+
+
+
+
+
+          //laso used to shoe notification ----->
+          ElevatedButton(
+              onPressed: (){
+                Get.snackbar("Vivek's App", "Here is your message",backgroundColor: Colors.amber,colorText: Colors.white);
+              },
+              child: "Show notification(SnackBar)".text.semiBold.make()
+          ),
+
+
+
+          ElevatedButton(
+              onPressed: (){
+                Get.defaultDialog(
+                  backgroundColor: Vx.purple100,
+                  title: "VIVEK APP",
+                  textCancel: "no",
+                  textConfirm: "yes",
+                );
+              },
+              child: "Show Dilaog".text.semiBold.make()
+          ),
+
 
 
         ],
